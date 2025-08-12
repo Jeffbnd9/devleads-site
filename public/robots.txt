@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Empêche l'indexation des fichiers sensibles
+Disallow: /api/
+
+Sitemap: https://www.devleads.org/sitemap.xml

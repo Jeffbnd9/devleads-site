@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [{ "type": "host", "value": "www.devleads.org" }],
+        "destination": "https://devleads.org/$1",
+        "permanent": true
+      }
+    ]
+  }
