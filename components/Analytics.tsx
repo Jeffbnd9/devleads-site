@@ -1,8 +1,8 @@
 "use client";
 
+import { Suspense, useEffect } from "react";
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -13,11 +13,11 @@ declare global {
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
-export default function Analytics() {
+/** Partie qui utilise les hooks de navigation */
+function AnalyticsInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Pageview à chaque navigation client
   useEffect(() => {
     if (!GA_ID) return;
     if (typeof window === "undefined") return;
@@ -34,6 +34,11 @@ export default function Analytics() {
     });
   }, [pathname, searchParams]);
 
+  return null;
+}
+
+/** Wrapper rendu par l’app : injection GA + Suspense pour les hooks */
+export default function Analytics() {
   if (!GA_ID) return null;
 
   return (
@@ -57,6 +62,11 @@ export default function Analytics() {
           gtag('config', '${GA_ID}', { 'anonymize_ip': true });
         `}
       </Script>
+
+      {/* ⬇️ Cette ligne évite l’erreur sur /404 / _not-found */}
+      <Suspense fallback={null}>
+        <AnalyticsInner />
+      </Suspense>
     </>
   );
 }
