@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import NeoCard from "@/components/NeoCard";
 import NeoButton from "@/components/NeoButton";
 
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Prestations", path: "/prestations" },
-  { label: "Projets", path: "/projets" }, // ⚠️ minuscules pour éviter les 404/hydration
+  { label: "Projets", path: "/projets" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -26,17 +26,11 @@ export default function Navbar() {
   return (
     <>
       {/* BARRE FIXE CENTRÉE */}
-      <NeoCard
-        className="
-          fixed left-1/2 -translate-x-1/2 z-50
-          top-5   /* marge depuis le haut */
-          rounded-2xl
-          w-[90%] max-w-[1600px]
-          px-3 py-2  /* hauteur plus compacte */
-          bg-[#31343a] border-[#23252c]
-          shadow-[4px_4px_16px_#23252c,-4px_-4px_12px_#484c56,0_1px_0px_#16171b]
-        "
-        padded={false}
+      <div
+        className="neocard fixed left-1/2 -translate-x-1/2 z-50
+        top-5 rounded-2xl w-[90%] max-w-[1600px] px-3 py-2
+        bg-[#31343a] border-[#23252c]
+        shadow-[4px_4px_16px_#23252c,-4px_-4px_12px_#484c56,0_1px_0px_#16171b]"
       >
         <div className="flex items-center justify-between gap-2">
           {/* Burger (mobile) */}
@@ -47,7 +41,6 @@ export default function Navbar() {
               aria-label="Ouvrir le menu"
               type="button"
             >
-              {/* Icône hamburger en SVG (pas d’asset externe) */}
               <svg
                 width="22"
                 height="22"
@@ -65,14 +58,9 @@ export default function Navbar() {
           </div>
 
           {/* Logo (desktop) */}
-          <a
+          <Link
             href="/"
-            className="
-              hidden md:inline-block
-              bg-white rounded-xl px-3 py-1
-              transition-transform
-              hover:scale-[1.12]
-            "
+            className="hidden md:inline-block bg-white rounded-xl px-3 py-1 transition-transform hover:scale-[1.12]"
             style={{ lineHeight: 0 }}
           >
             <Image
@@ -83,7 +71,7 @@ export default function Navbar() {
               style={{ width: "auto", height: "auto" }}
               priority
             />
-          </a>
+          </Link>
 
           {/* Liens desktop */}
           <div className="hidden md:flex items-center gap-4 mr-12">
@@ -94,22 +82,11 @@ export default function Navbar() {
                   key={item.path}
                   onClick={() => go(item.path)}
                   active={active}
-                  className="
-                    text-sm px-4 py-2
-                    bg-[#31343a] border-[#23252c]
-                    relative overflow-visible
-                    /* glow au survol déjà géré dans NeoButton via shadow/hover */
-                  "
+                  className="text-sm px-4 py-2 bg-[#31343a] border-[#23252c] relative overflow-visible"
                 >
-                  {/* liseré glossy */}
                   <span
                     aria-hidden
-                    className="
-                      pointer-events-none absolute inset-0 rounded-xl opacity-0
-                      transition-opacity duration-150
-                      bg-[linear-gradient(120deg,transparent_35%,rgba(255,255,255,.18)_48%,rgba(150,235,255,.14)_62%,transparent_70%)]
-                      group-hover:opacity-100
-                    "
+                    className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-150 bg-[linear-gradient(120deg,transparent_35%,rgba(255,255,255,.18)_48%,rgba(150,235,255,.14)_62%,transparent_70%)] group-hover:opacity-100"
                   />
                   <span className="relative z-10">{item.label}</span>
                 </NeoButton>
@@ -117,29 +94,23 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Espace à droite pour équilibrer (mobile) */}
           <div className="md:hidden w-[44px]" />
         </div>
-      </NeoCard>
+      </div>
 
       {/* DRAWER MOBILE */}
       {open && (
         <>
-          {/* Backdrop */}
           <button
             aria-label="Fermer le menu"
             onClick={() => setOpen(false)}
             className="fixed inset-0 z-40 bg-black/40"
           />
-          {/* Panneau gauche */}
           <div
-            className="
-              fixed z-50 top-0 left-0 h-dvh w-[200px]
-              bg-[#2f3136] border-r border-[#23252c]
-              shadow-[8px_0_24px_rgba(0,0,0,.35)]
-              p-4
-              animate-in slide-in-from-left duration-200
-            "
+            className="fixed z-50 top-0 left-0 h-dvh w-[200px]
+            bg-[#2f3136] border-r border-[#23252c]
+            shadow-[8px_0_24px_rgba(0,0,0,.35)] p-4
+            animate-in slide-in-from-left duration-200"
           >
             <div className="my-3 flex justify-center">
               <Image
@@ -162,21 +133,11 @@ export default function Navbar() {
                     key={item.path}
                     onClick={() => go(item.path)}
                     active={active}
-                    className="
-                      w-full justify-center
-                      bg-[#31343a] border-2
-                      font-bold tracking-wide
-                    "
+                    className="w-full justify-center bg-[#31343a] border-2 font-bold tracking-wide"
                   >
-                    {/* glossy */}
                     <span
                       aria-hidden
-                      className="
-                        pointer-events-none absolute inset-0 rounded-xl opacity-0
-                        transition-opacity duration-150
-                        bg-[linear-gradient(120deg,transparent_35%,rgba(255,255,255,.18)_48%,rgba(150,235,255,.14)_62%,transparent_70%)]
-                      "
-                      /* on mobile, on force un peu de glossy */
+                      className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-150 bg-[linear-gradient(120deg,transparent_35%,rgba(255,255,255,.18)_48%,rgba(150,235,255,.14)_62%,transparent_70%)]"
                       style={{ opacity: 0.9 }}
                     />
                     <span className="relative z-10">{item.label}</span>
@@ -187,10 +148,6 @@ export default function Navbar() {
           </div>
         </>
       )}
-
-      {/* RANGÉE MOBILE de liens (option si tu veux comme l’ancienne) 
-          -> Tu peux la remettre ici si tu préfères des boutons visibles en bas de la barre.
-      */}
     </>
   );
 }

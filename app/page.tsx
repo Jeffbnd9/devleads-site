@@ -22,7 +22,7 @@ export default function Home() {
         "
       >
         {/* Bloc 1 — Intro */}
-        <div className="neocard neocard-hover relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 flex flex-col justify-end">
+        <div className="neocard relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 flex flex-col justify-end">
           {/* Liserés */}
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
@@ -55,7 +55,7 @@ export default function Home() {
         </div>
 
         {/* Bloc 2 — CTA */}
-        <div className="neocard neocard-hover relative order-2 md:order-none md:col-start-1 md:col-end-3 md:row-start-4 md:row-end-6 flex items-center justify-center">
+        <div className="neocard relative order-2 md:order-none md:col-start-1 md:col-end-3 md:row-start-4 md:row-end-6 flex items-center justify-center">
           {/* Liserés */}
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Bloc 3 — Mockup */}
-        <div className="neocard neocard-hover relative order-4 md:order-none md:col-start-3 md:col-end-5 md:row-start-3 md:row-end-6 flex items-center justify-center">
+        <div className="neocard relative order-4 md:order-none md:col-start-3 md:col-end-5 md:row-start-3 md:row-end-6 flex items-center justify-center">
           {/* Liserés */}
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
 
         {/* Bloc 4 — Logos prestations */}
-        <div className="neocard neocard-hover relative order-3 md:order-none md:col-start-3 md:col-end-5 md:row-start-1 md:row-end-3 flex flex-col items-center justify-center gap-5 mt-2 md:mt-4">
+        <div className="neocard relative order-3 md:order-none md:col-start-3 md:col-end-5 md:row-start-1 md:row-end-3 flex flex-col items-center justify-center gap-5 mt-2 md:mt-4">
           {/* Liserés */}
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
@@ -281,7 +281,7 @@ export default function Home() {
 
       {/* SECTION 3 — Technologies */}
       <section className="min-h-screen flex flex-col items-center justify-center px-2 md:px-4 py-16 md:py-28 w-full">
-        <div className="neocard neocard-hover relative w-full max-w-4xl text-center">
+        <div className="neocard relative w-full max-w-4xl text-center">
           {/* Liserés */}
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
