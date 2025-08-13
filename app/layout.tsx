@@ -1,6 +1,8 @@
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import CookieConsent from "@/components/CookieConsent";
+import Analytics from "@/components/Analytics";
 
 export default function RootLayout({
   children,
@@ -11,6 +13,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
+        <CookieConsent />
+        <Analytics />
         {children}
         <Footer />
       </body>
