@@ -2,7 +2,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
-import { NavBar } from "@/components/Navbar";
+import { NavBar } from "@/components/nav";
 
 export default function RootLayout({
   children,
