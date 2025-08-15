@@ -8,7 +8,7 @@ const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="mt-15">
+    <div className="">
       {/* SECTION 1 — Intro + CTA + Logos + Mockup */}
       <section
         className="
@@ -22,11 +22,7 @@ export default function Home() {
         "
       >
         {/* Bloc 1 — Intro */}
-        <div className="neocard relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 flex flex-col justify-end">
-          {/* Liserés */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
-
+        <div className="relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 flex flex-col justify-end">
           <div className="mb-5 mt-4 w-full flex justify-start">
             <Image
               src="/logo_devleads_transparent.png"
@@ -39,13 +35,13 @@ export default function Home() {
           </div>
 
           <h2
-            className={`text-2xl md:text-4xl lg:text-[40px] mb-5 ${poppins.className} text-left max-w-xl text-white`}
+            className={`text-2xl md:text-4xl lg:text-[40px] mb-5 ${poppins.className} text-left max-w-xl text-black`}
           >
             Votre partenaire digital pour des solutions web personnalisées
           </h2>
 
           <p
-            className={`text-base md:text-lg ${poppins.className} text-left max-w-xl text-gray-200`}
+            className={`text-base md:text-lg ${poppins.className} text-left max-w-xl text-gray-600`}
           >
             Chez DevLeads, nous transformons vos idées en expériences numériques
             puissantes. Spécialisés dans le développement web sur mesure, nous
@@ -62,7 +58,7 @@ export default function Home() {
 
           <Link
             href="/contact"
-            className="neobutton neobutton-hover text-lg md:text-2xl py-3 w-full text-center"
+            className="neobutton neobutton-hover text-lg md:text-2xl py-3 text-center"
           >
             Consultation / Devis GRATUIT
           </Link>
@@ -88,11 +84,7 @@ export default function Home() {
         </div>
 
         {/* Bloc 4 — Logos prestations */}
-        <div className="neocard relative order-3 md:order-none md:col-start-3 md:col-end-5 md:row-start-1 md:row-end-3 flex flex-col items-center justify-center gap-5 mt-2 md:mt-4">
-          {/* Liserés */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
-
+        <div className=" relative order-3 md:order-none md:col-start-3 md:col-end-5 md:row-start-1 md:row-end-3 flex flex-col items-center justify-end gap-5 mt-2 md:mt-4">
           <Image
             src="/images/logo_site_vitrine.png"
             alt="DevLeads - Développement Site vitrine"

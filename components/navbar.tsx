@@ -1,153 +1,134 @@
 "use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
-import NeoButton from "@/components/NeoButton";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import React from "react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "Prestations", path: "/prestations" },
-  { label: "Projets", path: "/projets" },
-  { label: "Contact", path: "/contact" },
+const menuItems = [
+  { name: "Home", href: "/" },
+  { name: "Prestations", href: "/prestations" },
+  { name: "Projets", href: "/projets" },
+  { name: "Contact", href: "/contact" },
 ];
 
-export default function Navbar() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+export const NavBar = () => {
+  const [menuState, setMenuState] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
-  const go = (href: string) => {
-    setOpen(false);
-    router.push(href);
-  };
-
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <>
-      {/* BARRE FIXE CENTRÉE */}
-      <div
-        className="neocard fixed left-1/2 -translate-x-1/2 z-50
-        top-5 rounded-2xl w-[90%] max-w-[1600px] px-3 py-2
-        bg-[#31343a] border-[#23252c]
-        shadow-[4px_4px_16px_#23252c,-4px_-4px_12px_#484c56,0_1px_0px_#16171b]"
+    <header>
+      <nav
+        data-state={menuState && "active"}
+        className="fixed z-20 w-full px-2"
       >
-        <div className="flex items-center justify-between gap-2">
-          {/* Burger (mobile) */}
-          <div className="md:hidden">
-            <NeoButton
-              onClick={() => setOpen(true)}
-              className="px-3 py-2"
-              aria-label="Ouvrir le menu"
-              type="button"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+        <div
+          className={cn(
+            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            isScrolled &&
+              "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+          )}
+        >
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            <div className="flex w-full justify-between lg:w-auto">
+              <Link
+                href="/"
+                aria-label="home"
+                className="flex items-center space-x-2"
               >
-                <path
-                  d="M3 6h18M3 12h18M3 18h18"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
+                <Image
+                  src="/images/logo_devleads.png"
+                  alt="Mockup Mac Tesla"
+                  width={100}
+                  height={300}
+                  priority
+                  className=" w-full max-w-md md:max-w-xl"
+                  style={{ height: "auto" }}
                 />
-              </svg>
-            </NeoButton>
-          </div>
+              </Link>
 
-          {/* Logo (desktop) */}
-          <Link
-            href="/"
-            className="hidden md:inline-block bg-white rounded-xl px-3 py-1 transition-transform hover:scale-[1.12]"
-            style={{ lineHeight: 0 }}
-          >
-            <Image
-              src="/logo_devleads_transparent.png"
-              alt="Logo DevLeads - Développement Web"
-              width={120}
-              height={40}
-              style={{ width: "auto", height: "auto" }}
-              priority
-            />
-          </Link>
-
-          {/* Liens desktop */}
-          <div className="hidden md:flex items-center gap-4 mr-12">
-            {navItems.map((item) => {
-              const active = pathname === item.path;
-              return (
-                <NeoButton
-                  key={item.path}
-                  onClick={() => go(item.path)}
-                  active={active}
-                  className="text-sm px-4 py-2 bg-[#31343a] border-[#23252c] relative overflow-visible"
-                >
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-150 bg-[linear-gradient(120deg,transparent_35%,rgba(255,255,255,.18)_48%,rgba(150,235,255,.14)_62%,transparent_70%)] group-hover:opacity-100"
-                  />
-                  <span className="relative z-10">{item.label}</span>
-                </NeoButton>
-              );
-            })}
-          </div>
-
-          <div className="md:hidden w-[44px]" />
-        </div>
-      </div>
-
-      {/* DRAWER MOBILE */}
-      {open && (
-        <>
-          <button
-            aria-label="Fermer le menu"
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 z-40 bg-black/40"
-          />
-          <div
-            className="fixed z-50 top-0 left-0 h-dvh w-[200px]
-            bg-[#2f3136] border-r border-[#23252c]
-            shadow-[8px_0_24px_rgba(0,0,0,.35)] p-4
-            animate-in slide-in-from-left duration-200"
-          >
-            <div className="my-3 flex justify-center">
-              <Image
-                src="/logo_devleads_transparent.png"
-                alt="Logo DevLeads - Développement Web"
-                width={120}
-                height={40}
-                style={{ width: "auto", height: "auto" }}
-                priority
-              />
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+              >
+                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+              </button>
             </div>
 
-            <div className="h-px bg-[#3c3f46] my-2" />
+            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+              <ul className="flex gap-8 text-sm">
+                {menuItems.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.href}
+                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                    >
+                      <span>{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <nav className="mt-3 grid gap-3">
-              {navItems.map((item) => {
-                const active = pathname === item.path;
-                return (
-                  <NeoButton
-                    key={item.path}
-                    onClick={() => go(item.path)}
-                    active={active}
-                    className="w-full justify-center bg-[#31343a] border-2 font-bold tracking-wide"
-                  >
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-150 bg-[linear-gradient(120deg,transparent_35%,rgba(255,255,255,.18)_48%,rgba(150,235,255,.14)_62%,transparent_70%)]"
-                      style={{ opacity: 0.9 }}
-                    />
-                    <span className="relative z-10">{item.label}</span>
-                  </NeoButton>
-                );
-              })}
-            </nav>
+            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+              <div className="lg:hidden">
+                <ul className="space-y-6 text-base">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item.href}
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      >
+                        <span>{item.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className={cn(isScrolled && "lg:hidden")}
+                >
+                  <Link href="#">
+                    <span>Login</span>
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(isScrolled && "lg:hidden")}
+                >
+                  <Link href="#">
+                    <span>Sign Up</span>
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
+                >
+                  <Link href="#">
+                    <span>Get Started</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
-        </>
-      )}
-    </>
+        </div>
+      </nav>
+    </header>
   );
-}
+};
