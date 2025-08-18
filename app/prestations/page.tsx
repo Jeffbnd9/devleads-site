@@ -1,5 +1,47 @@
 import Link from "next/link";
 import FAQ from "@/components/FAQ";
+import SeoJsonLd from "@/components/SeoJsonLd";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Prestations — Création de sites web (Le Thuit-de-l'Oison, Eure, Normandie)",
+  description:
+    "DevLeads conçoit des sites vitrines, e-commerce et solutions web sur-mesure. Performance, SEO local et accompagnement.",
+  alternates: { canonical: "https://www.devleads.org/prestations" },
+  openGraph: {
+    title: "Prestations — DevLeads",
+    description:
+      "Sites vitrines, e-commerce et projets web sur-mesure. Performance & SEO.",
+    url: "https://www.devleads.org/prestations",
+    type: "website",
+    images: [{ url: "/images/logo_devleads.png" }],
+  },
+};
+
+const services = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Création de site vitrine",
+    provider: { "@type": "LocalBusiness", name: "DevLeads" },
+    areaServed: { "@type": "Place", name: "Eure, France" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Création de boutique e-commerce",
+    provider: { "@type": "LocalBusiness", name: "DevLeads" },
+    areaServed: { "@type": "Place", name: "Eure, France" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Développement web personnalisé",
+    provider: { "@type": "LocalBusiness", name: "DevLeads" },
+    areaServed: { "@type": "Place", name: "Normandie, France" },
+  },
+];
 
 type Pack = {
   name: string;
@@ -100,6 +142,7 @@ export default function PrestationsPage() {
 
   return (
     <main className="w-full">
+      <SeoJsonLd json={services} />
       {/* En-tête */}
       <section className="px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center mb-6">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-wide text-black">
