@@ -21,8 +21,6 @@ type BodyDevis = {
   project: string;
 };
 
-type ContactBody = BodyMessage | BodyDevis;
-
 function isNonEmptyString(v: unknown): v is string {
   return typeof v === "string" && v.trim().length > 0;
 }

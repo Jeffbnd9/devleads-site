@@ -1,15 +1,20 @@
+// components/SeoJsonLd.tsx
 "use client";
 
-import Script from "next/script";
+import Head from "next/head";
 
-type Props = { json: Record<string, any> | Record<string, any>[] };
+type JsonLdProps = {
+  json: Record<string, unknown> | Record<string, unknown>[];
+};
 
-export default function SeoJsonLd({ json }: Props) {
+export default function SeoJsonLd({ json }: JsonLdProps) {
   return (
-    <Script
-      id="jsonld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
-    />
+    <Head>
+      <script
+        type="application/ld+json"
+        // JSON.stringify avec indentation null/2 pour lisibilité
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(json, null, 2) }}
+      />
+    </Head>
   );
 }
