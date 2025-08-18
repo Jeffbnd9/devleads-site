@@ -58,6 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" />
       <body>
         <NavBar />
         <Analytics />
