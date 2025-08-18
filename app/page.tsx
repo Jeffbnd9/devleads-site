@@ -23,7 +23,7 @@ export default function Home() {
       >
         {/* Bloc 1 — Intro */}
         <div className="relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 flex flex-col justify-end">
-          <div className="mb-5 mt-4 w-full flex justify-start">
+          <div className="mb-5 mt-4 w-full flex justify-start hidden md:block">
             <Image
               src="/logo_devleads_transparent.png"
               alt="Logo DevLeads - Développement Web"

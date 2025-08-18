@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -46,7 +45,7 @@ export const NavBar = () => {
               >
                 <Image
                   src="/images/logo_devleads.png"
-                  alt="Mockup Mac Tesla"
+                  alt="Logo DevLeads"
                   width={100}
                   height={300}
                   priority
@@ -71,7 +70,7 @@ export const NavBar = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      className="text-black hover:text-red-700 block duration-150"
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -94,36 +93,6 @@ export const NavBar = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <span>Login</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <span>Sign Up</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
-                >
-                  <Link href="#">
-                    <span>Get Started</span>
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
