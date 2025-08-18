@@ -249,7 +249,10 @@ export default function PrestationsPage() {
           </ul>
           <div className="mt-8">
             <Link href="/contact">
-              <button className="neobutton neobutton-hover">
+              <button
+                className="neobutton neobutton-hover"
+                aria-label="Accéder à la page contact"
+              >
                 Je veux le bonus CEO
               </button>
             </Link>
@@ -284,7 +287,10 @@ export default function PrestationsPage() {
         </p>
         <div className="mt-8 text-center">
           <Link href="/contact">
-            <button className="neobutton neobutton-hover">
+            <button
+              className="neobutton neobutton-hover"
+              aria-label="Accéder à la page contact"
+            >
               Vous hésitez ? Demandez un audit gratuit (48 h)
             </button>
           </Link>

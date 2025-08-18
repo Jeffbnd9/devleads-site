@@ -6,21 +6,6 @@ import nodemailer from "nodemailer";
 export const runtime = "nodejs";          // nécessaire sur Vercel pour utiliser nodemailer
 export const dynamic = "force-dynamic";   // évite certains caches en dev/preview
 
-type BodyMessage = {
-  type: "message";
-  name: string;
-  email: string;
-  message: string;
-};
-
-type BodyDevis = {
-  type: "vitrine" | "ecommerce" | "personnalise" | "devis";
-  name: string;
-  email: string;
-  phone?: string;
-  project: string;
-};
-
 function isNonEmptyString(v: unknown): v is string {
   return typeof v === "string" && v.trim().length > 0;
 }

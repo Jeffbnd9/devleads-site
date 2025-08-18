@@ -1,0 +1,20 @@
+<!-- app/icon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="DevLeads">
+  <defs>
+    <!-- Facile à rethémer : change les couleurs ici -->
+    <style>
+      :root {
+        --dl-ink: #0B0D12;   /* noir profond */
+        --dl-accent: #A62609;/* rouge DevLeads */
+      }
+    </style>
+  </defs>
+
+  <!-- Marque "D" en aplat, fond transparent -->
+  <!-- D externe (noir) -->
+  <path fill="var(--dl-ink)"
+        d="M36 28h28c24 0 44 16 44 36s-20 36-44 36H36V28Z"/>
+  <!-- Contreforme (trou rouge) pour le contre-D -->
+  <path fill="var(--dl-accent)"
+        d="M52 44h12c14 0 26 9 26 20s-12 20-26 20H52V44Z"/>
+</svg>

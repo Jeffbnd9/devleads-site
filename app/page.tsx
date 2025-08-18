@@ -59,6 +59,7 @@ export default function Home() {
           <Link
             href="/contact"
             className="neobutton neobutton-hover text-lg md:text-2xl py-3 text-center"
+            aria-label="Accéder à la page contact"
           >
             Consultation / Devis GRATUIT
           </Link>
@@ -90,6 +91,7 @@ export default function Home() {
             alt="DevLeads - Développement Site vitrine"
             width={250}
             height={120}
+            priority
             className="w-32 md:w-[250px]"
           />
           <div className="flex flex-col md:flex-row gap-6 md:gap-8">
@@ -98,6 +100,7 @@ export default function Home() {
               alt="DevLeads - Développement Site e-commerce"
               width={250}
               height={120}
+              priority
               className="w-32 md:w-[250px]"
             />
             <Image
@@ -105,6 +108,7 @@ export default function Home() {
               alt="DevLeads - Développement Site personnalisé"
               width={250}
               height={120}
+              priority
               className="w-32 md:w-[250px]"
             />
           </div>
@@ -136,6 +140,7 @@ export default function Home() {
               height={70}
               className="mb-4 w-16 md:w-[70px]"
               style={{ height: "auto" }}
+              loading="lazy"
             />
             <h3 className="text-xl md:text-4xl font-bold text-white mb-2 md:mb-4">
               Conception de sites web
@@ -187,6 +192,7 @@ export default function Home() {
               height={70}
               className="mb-4 w-16 md:w-[70px]"
               style={{ height: "auto" }}
+              loading="lazy"
             />
             <h3 className="text-xl md:text-4xl font-bold text-white mb-2 md:mb-4">
               Boutiques en ligne modernes
@@ -236,6 +242,7 @@ export default function Home() {
               height={70}
               className="mb-4 w-16 md:w-[70px]"
               style={{ height: "auto" }}
+              loading="lazy"
             />
             <h3 className="text-xl md:text-4xl font-bold text-white mb-2 md:mb-4">
               L&apos;envie de votre choix&nbsp;?
@@ -295,7 +302,7 @@ export default function Home() {
               height={450}
               className="w-full border border-[#454953] rounded-xl shadow-[4px_4px_16px_#23252c,-4px_-4px_12px_#3a3d45]"
               style={{ height: "auto" }}
-              priority={false}
+              loading="lazy"
             />
           </div>
         </div>
