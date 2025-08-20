@@ -17,7 +17,7 @@ export default function Home() {
           md:grid-cols-4 md:grid-rows-5
           gap-4
           px-2 md:px-4
-          py-10 md:py-0
+          py-15 md:py-0
           w-full max-w-7xl mx-auto
         "
       >

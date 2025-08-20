@@ -208,7 +208,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="message-name"
-                      className="block text-sm font-medium mb-2"
+                      className="block text-white text-sm font-medium mb-2"
                     >
                       Nom complet *
                     </label>
@@ -227,7 +227,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="message-email"
-                      className="block text-sm font-medium mb-2"
+                      className="block text-white text-sm font-medium mb-2"
                     >
                       Email *
                     </label>
@@ -249,7 +249,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="message-content"
-                      className="block text-sm font-medium mb-2"
+                      className="block text-white text-sm font-medium mb-2"
                     >
                       Message *
                     </label>
@@ -291,7 +291,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="devis-name"
-                        className="block text-sm font-medium mb-2"
+                        className="block text-white text-sm font-medium mb-2"
                       >
                         Nom complet *
                       </label>
@@ -310,7 +310,7 @@ const Contact = () => {
                     <div>
                       <label
                         htmlFor="devis-email"
-                        className="block text-sm font-medium mb-2"
+                        className="block text-white text-sm font-medium mb-2"
                       >
                         Email *
                       </label>
@@ -330,7 +330,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="devis-phone"
-                      className="block text-sm font-medium mb-2"
+                      className="block text-white text-sm font-medium mb-2"
                     >
                       Téléphone
                     </label>
@@ -348,7 +348,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="devis-type"
-                      className="block text-sm font-medium mb-2"
+                      className="block text-white text-sm font-medium mb-2"
                     >
                       Type de projet *
                     </label>
@@ -372,7 +372,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="devis-project"
-                      className="block text-sm font-medium mb-2"
+                      className="block text-white text-sm font-medium mb-2"
                     >
                       Description du projet *
                     </label>
@@ -408,7 +408,9 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="bg-[#31343a] rounded-2xl border border-[#23252c] shadow-[4px_4px_16px_#23252c,-4px_-4px_12px_#484c56,0_1px_0px_#16171b] p-6 mb-6">
-              <h3 className="text-xl font-bold mb-4">Notre localisation</h3>
+              <h3 className="text-xl text-white font-bold mb-4">
+                Notre localisation
+              </h3>
               <div className="bg-[#23252c] rounded-xl overflow-hidden">
                 <iframe
                   title="Localisation DevLeads"

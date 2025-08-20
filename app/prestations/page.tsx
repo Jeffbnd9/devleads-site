@@ -60,10 +60,10 @@ export default function PrestationsPage() {
       name: "Vitrine Express",
       tagline: "Site rapide & mobile — livré en 10 jours",
       price: "300–1 500 €",
-      audience: "Commerces & artisans (Thuit-de-l’Oison & alentours)",
+      audience: "Commerces & artisans / particulier",
       features: [
         "1 page scroll (ou 3 sections clés)",
-        "Design Next.js + Tailwind, mobile-first",
+        "Design Moderne",
         "Formulaire contact (mail + stockage Supabase)",
         "Perf & SEO de base (Lighthouse ≥ 90, sitemap, meta)",
         "Mentions légales + RGPD (v1)",
