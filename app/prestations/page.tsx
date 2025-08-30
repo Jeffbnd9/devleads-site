@@ -231,37 +231,11 @@ export default function PrestationsPage() {
         </div>
       </section>
 
-      {/* CEO BONUS */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="neocard mx-auto max-w-6xl relative p-6">
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#9ff3ff80] to-transparent" />
-          <h3 className="mt-2 text-xl md:text-2xl font-extrabold text-white">
-            Coaching & Plan d’action
-          </h3>
-          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-200">
-            {ceoBonus.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="mt-2 w-2 h-2 rounded-full bg-[#b8eaff]" />
-                <span className="text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8">
-            <Link href="/contact">
-              <button
-                className="neobutton neobutton-hover"
-                aria-label="Accéder à la page contact"
-              >
-                Je veux le bonus CEO
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Maintenance */}
       <section className="px-4 sm:px-6 lg:px-8 pb-16">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-wide text-black text-center m-10">
+          Les options d'abonnements
+        </h1>
         <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {maintenance.map((m) => (
             <div key={m.name} className="neocard relative p-6">
