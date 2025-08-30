@@ -136,10 +136,7 @@ export default function Footer() {
 
       {/* Informations légales */}
       <div className="border-t border-white mt-10 pt-6 text-sm text-white text-center space-y-2">
-        <p>
-          DevLeads - Micro-entreprise de Jeff Benard - SIRET : [en cours
-          d&apos;enregistrement] - Le Thuit-de-l&apos;Oison, France
-        </p>
+        <p>DevLeads - Le Thuit-de-l&apos;Oison, France</p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 text-xs text-white">
           <Link href="/mentions" className="hover:text-red-500 transition">
             Mentions légales
