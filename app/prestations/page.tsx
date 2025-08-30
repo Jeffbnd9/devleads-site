@@ -234,7 +234,7 @@ export default function PrestationsPage() {
       {/* Maintenance */}
       <section className="px-4 sm:px-6 lg:px-8 pb-16">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-wide text-black text-center m-10">
-          Les options d'abonnements
+          Les options d&apos;abonnements
         </h1>
         <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {maintenance.map((m) => (
