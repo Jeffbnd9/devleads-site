@@ -132,14 +132,6 @@ export default function PrestationsPage() {
     },
   ];
 
-  const ceoBonus = [
-    "Session stratégique 30 min (dirigeant)",
-    "Clarification offre & message (ICP)",
-    "Plan d’actions 30/60/90 jours (PDF)",
-    "Checklist SEO local (quick wins)",
-    "Template Notion de suivi + priorités",
-  ];
-
   return (
     <main className="w-full">
       <SeoJsonLd json={services} />
