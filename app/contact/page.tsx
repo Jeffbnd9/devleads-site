@@ -163,7 +163,7 @@ const Contact = () => {
               <div className="flex space-x-4 mb-8">
                 <button
                   onClick={() => setActiveTab("message")}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
                     activeTab === "message"
                       ? "bg-white text-black"
                       : "bg-[#23252c] text-[#c7c9d1] hover:bg-[#3f434c]"
@@ -173,7 +173,7 @@ const Contact = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab("devis")}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
                     activeTab === "devis"
                       ? "bg-white text-black"
                       : "bg-[#23252c] text-[#c7c9d1] hover:bg-[#3f434c]"
@@ -431,7 +431,7 @@ const Contact = () => {
             </div>
 
             <div className="bg-[#31343a] rounded-2xl border border-[#23252c] shadow-[4px_4px_16px_#23252c,-4px_-4px_12px_#484c56,0_1px_0px_#16171b] p-6">
-              <h3 className="text-xl font-bold mb-4">
+              <h3 className="text-xl text-white font-bold mb-4">
                 Pourquoi nous choisir ?
               </h3>
               <ul className="space-y-3 text-[#c7c9d1] text-sm">

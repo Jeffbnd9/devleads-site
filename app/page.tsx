@@ -22,8 +22,8 @@ export default function Home() {
         "
       >
         {/* Bloc 1 — Intro */}
-        <div className="relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 flex flex-col justify-end">
-          <div className="mb-5 mt-4 w-full flex justify-start hidden md:block">
+        <div className="relative order-1 md:order-none md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4 md:mt-15 flex flex-col justify-end">
+          <div className="mb-5 mt-4 w-full flex justify-start hidden xl:block">
             <Image
               src="/logo_devleads_transparent.png"
               alt="Logo DevLeads - Développement Web"
@@ -92,7 +92,7 @@ export default function Home() {
             width={250}
             height={120}
             priority
-            className="w-32 md:w-[250px]"
+            className="w-50 md:w-[150px] lg:w-[225px]"
           />
           <div className="flex flex-col md:flex-row gap-6 md:gap-8">
             <Image
@@ -101,15 +101,15 @@ export default function Home() {
               width={250}
               height={120}
               priority
-              className="w-32 md:w-[250px]"
+              className="w-50 md:w-[150px] lg:w-[225px]"
             />
             <Image
               src="/images/logo_site_perso.png"
               alt="DevLeads - Développement Site personnalisé"
               width={250}
-              height={120}
+              height={100}
               priority
-              className="w-32 md:w-[250px]"
+              className="w-50 md:w-[150px] lg:w-[225px]"
             />
           </div>
         </div>
